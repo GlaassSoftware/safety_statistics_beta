@@ -29,7 +29,7 @@ jobs:
           sas_token: ${{ secrets.BLOBSTORAGESASKEY }}
           account_name: glaassbetane01
           container_name: 91df645e1b2d4dfcbc404af290ee3a89-reportdef
-          source_dir: ./src
+          source_dir: src
           overwrite: true
           
 
