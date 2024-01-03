@@ -23,3 +23,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: Azure Blob Storage Upload
+        uses: bacongobbler/azure-blob-storage-upload@v3.0.0
+        with:
+          sas_token: # optional
+          account_name: glaassbetane01
+          container_name: 91df645e1b2d4dfcbc404af290ee3a89-reportdef
+          source_dir: ./src
+          overwrite: true
+          
+
+      
+
