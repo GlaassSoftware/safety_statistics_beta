@@ -1,0 +1,64 @@
+﻿<report xmlns="http://schema.glaass.net/report/1.0">
+  <condition feature="Production">
+    <condition field="7d8ceeaa-d5f2-48b8-bf61-8bd4ac342c11" filterRange="Within">
+      <mapping>
+        <account name="Location" field="df744b69-63c4-4912-93ca-91d2bb558dc3" />
+        <account name="ProjectType" metadata="aaec065dd7cd47b387a9237f5ef83769" />
+        <!-- workforce and hours come from ProductionDataProvider.ProductionInfo -->
+        <account name="WORKFORCE" production="Workforce" />
+        <outcome metric="Quantity" production="Hours" name="Hours" />
+      </mapping>
+    </condition>
+    <condition field="47099f7a-95a4-4d52-974a-ad120806959d" filterRange="Within">
+      <mapping>
+        <account name="Location" field="9d85c8be-1a77-4ab5-a2fd-3113b73d9240" />
+        <account name="ProjectType" metadata="aaec065dd7cd47b387a9237f5ef83769" />
+        <!-- workforce and hours come from ProductionDataProvider.ProductionInfo -->
+        <account name="WORKFORCE" production="Workforce" />
+        <outcome metric="Quantity" production="Hours" name="Hours" />
+      </mapping>
+    </condition>
+  </condition>
+  <condition feature="Safety">
+    <condition field="9d0b639e-9270-4d9f-a8c4-8c58e5bcdf95" filterRange="Within">
+      <condition field="118f3d01-ec64-4a51-ac45-2f74083aeb62" fiterValue="35f5ad61-6da1-4773-aa4f-1a65dda2dfac">
+        <mapping>
+          <account name="ProjectType" metadata="aaec065dd7cd47b387a9237f5ef83769" />
+          <!-- workforce and workers come from SafetyDataProvider.SafetyInfo -->
+          <account name="WORKFORCE" safety="Workforce" />
+          <outcome metric="Quantity" safety="Workers" name="InjuredWorkers" />
+          <outcome metric="Quantity" safety="LostDays" name="LostDays" />
+        </mapping>
+      </condition>
+      <condition field="118f3d01-ec64-4a51-ac45-2f74083aeb62" fiterValue="7c90da9e-c291-43d2-846e-6a8cc2e7d661">
+        <mapping>
+          <account name="ProjectType" metadata="aaec065dd7cd47b387a9237f5ef83769" />
+          <!-- workforce and workers come from SafetyDataProvider.SafetyInfo -->
+          <account name="WORKFORCE" safety="Workforce" />
+          <outcome metric="Quantity" safety="Workers" name="OtherWorkers" />
+          <outcome metric="Quantity" safety="LostDays" name="LostDays" />
+        </mapping>
+      </condition>
+    </condition>
+  </condition>
+  <condition feature="Safety">
+    <condition field="fbc9e02a-3248-42cc-b7fe-37a7b498b4a4" filterRange="Within">
+      <mapping>
+        <account name="ProjectType" metadata="aaec065dd7cd47b387a9237f5ef83769" />
+        <!-- workforce and workers come from SafetyDataProvider.SafetyInfo -->
+        <account name="WORKFORCE" safety="Workforce" />
+        <outcome metric="Quantity" safety="Workers" name="DeadWorkers" />
+        <outcome metric="Quantity" safety="LostDays" name="LostDays" />
+      </mapping>
+    </condition>
+  </condition>
+  <mapping>
+    <expression>
+      <outcome metric="Amount" expression="(DeadWorkers + InjuredWorkers + OtherWorkers) / Hours * 1000000" name="TRFR" />
+      <outcome metric="Amount" expression="(DeadWorkers + InjuredWorkers) / Hours * 1000000" name="LTIFR" />
+      <outcome metric="Amount" expression="DeadWorkers / Hours * 1000000" name="FFR" />
+      <outcome metric="Amount" expression="LostDays / Hours * 1000" name="LDR" />
+    </expression>
+  </mapping>
+</report>
+
