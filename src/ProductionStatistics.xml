@@ -1,0 +1,14 @@
+<report xmlns="http://schema.glaass.net/report/1.0">
+    <condition feature="Production">
+        <condition metadata="5c855d64cc944bff99961a8dbabee566" filterRange="Within">
+            <mapping>
+                <account name="Region" metadata="e40af8a698da49c3bfb1966105cfbccb" />
+                <account name="Country" metadata="c4170d45c4074d23a07206d66e546477" />
+                <account name="Project" metadata="054279e175c643a7a3a75162b4fc5554" />
+                <account name="Workforce" production="Workforce" />
+                <outcome metric="Quantity" production="Hours" name="Hours" />
+            </mapping>
+        </condition>
+    </condition>
+</report>
+
