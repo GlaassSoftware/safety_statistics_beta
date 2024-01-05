@@ -32,7 +32,7 @@
         <mapping>
             <account name="Location" field="9d85c8be-1a77-4ab5-a2fd-3113b73d9240" />
             <account name="ProjectType" metadata="aaec065dd7cd47b387a9237f5ef83769" />
-            <account name="Workforce" production="Workforce" />
+            <account name="Workforce" safety="Workforce" />
             <outcome metric="Quantity" safety="Workers" name="OtherWorkers" />
             <outcome metric="Quantity" safety="LostDays" name="LostDays" />
         </mapping>
