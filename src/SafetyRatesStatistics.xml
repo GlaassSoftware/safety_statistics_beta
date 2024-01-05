@@ -20,6 +20,8 @@
           <account name="Workforce" safety="Workforce"/>
           <outcome metric="Quantity" safety="LostDays" name="LostDays"/>
           <outcome metric="Quantity" safety="Workers" name="InjuredWorkers"/>
+          <outcome metric="Quantity" value="0" name="DeadWorkers"/>
+          <outcome metric="Quantity" value="0" name="OtherWorkers"/>
         </mapping>
       </condition>
       <condition metadata="212bdeb31ae946f4b254bb41e10b2702" filterValue="4b9ab535-de68-44d4-815c-2797d253f63d">
@@ -30,6 +32,8 @@
           <account name="Workforce" safety="Workforce"/>
           <outcome metric="Quantity" safety="LostDays" name="LostDays"/>
           <outcome metric="Quantity" safety="Workers" name="InjuredWorkers"/>
+          <outcome metric="Quantity" value="0" name="DeadWorkers"/>
+          <outcome metric="Quantity" value="0" name="OtherWorkers"/>
         </mapping>
       </condition>
       <condition metadata="212bdeb31ae946f4b254bb41e10b2702" filterValue="dd8ca2b4-951b-4987-b1d0-65572db84d61">
@@ -40,6 +44,8 @@
           <account name="Workforce" safety="Workforce"/>
           <outcome metric="Quantity" safety="LostDays" name="LostDays"/>
           <outcome metric="Quantity" safety="Workers" name="DeadWorkers"/>
+          <outcome metric="Quantity" value="0" name="InjuredWorkers"/>
+          <outcome metric="Quantity" value="0" name="OtherWorkers"/>
         </mapping>
       </condition>
       <condition field="c17a7d32-f937-41f5-b48a-082a09cbc2e1">
@@ -50,6 +56,8 @@
           <account name="Workforce" safety="Workforce"/>
           <outcome metric="Quantity" safety="LostDays" name="LostDays"/>
           <outcome metric="Quantity" safety="Workers" name="OtherWorkers"/>
+          <outcome metric="Quantity" value="0" name="InjuredWorkers"/>
+          <outcome metric="Quantity" value="0" name="DeadWorkers"/>
         </mapping>
       </condition>
     </condition>
