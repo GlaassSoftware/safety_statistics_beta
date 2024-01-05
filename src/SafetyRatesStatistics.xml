@@ -2,7 +2,6 @@
   <condition feature="Production">
     <condition metadata="5c855d64cc944bff99961a8dbabee566" filterRange="Within">
       <mapping>
-        <account name="Region" metadata="e40af8a698da49c3bfb1966105cfbccb"/>
         <account name="Country" metadata="c4170d45c4074d23a07206d66e546477"/>
         <account name="Project" metadata="054279e175c643a7a3a75162b4fc5554"/>
         <account name="Workforce" production="Workforce"/>
@@ -14,7 +13,6 @@
     <condition metadata="6543d35955f045ffb3f1fdf888ed5cd6" filterRange="Within">
       <condition metadata="212bdeb31ae946f4b254bb41e10b2702" filterValue="6841ca32-f256-444b-8bd5-04c84c0b3b5f">
         <mapping>
-          <account name="Region" metadata="e40af8a698da49c3bfb1966105cfbccb"/>
           <account name="Country" metadata="c4170d45c4074d23a07206d66e546477"/>
           <account name="Project" metadata="054279e175c643a7a3a75162b4fc5554"/>
           <account name="Workforce" safety="Workforce"/>
@@ -26,7 +24,6 @@
       </condition>
       <condition metadata="212bdeb31ae946f4b254bb41e10b2702" filterValue="4b9ab535-de68-44d4-815c-2797d253f63d">
         <mapping>
-          <account name="Region" metadata="e40af8a698da49c3bfb1966105cfbccb"/>
           <account name="Country" metadata="c4170d45c4074d23a07206d66e546477"/>
           <account name="Project" metadata="054279e175c643a7a3a75162b4fc5554"/>
           <account name="Workforce" safety="Workforce"/>
@@ -38,7 +35,6 @@
       </condition>
       <condition metadata="212bdeb31ae946f4b254bb41e10b2702" filterValue="dd8ca2b4-951b-4987-b1d0-65572db84d61">
         <mapping>
-          <account name="Region" metadata="e40af8a698da49c3bfb1966105cfbccb"/>
           <account name="Country" metadata="c4170d45c4074d23a07206d66e546477"/>
           <account name="Project" metadata="054279e175c643a7a3a75162b4fc5554"/>
           <account name="Workforce" safety="Workforce"/>
@@ -50,7 +46,6 @@
       </condition>
       <condition field="c17a7d32-f937-41f5-b48a-082a09cbc2e1">
         <mapping>
-          <account name="Region" metadata="e40af8a698da49c3bfb1966105cfbccb"/>
           <account name="Country" metadata="c4170d45c4074d23a07206d66e546477"/>
           <account name="Project" metadata="054279e175c643a7a3a75162b4fc5554"/>
           <account name="Workforce" safety="Workforce"/>
