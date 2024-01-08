@@ -1,4 +1,4 @@
-﻿<report xmlns="http://schema.glaass.net/report/1.0">
+﻿<report xmlns="http://schema.glaass.net/report/1.0" reportCode="RATES">
   <condition feature="Production">
     <condition metadata="5c855d64cc944bff99961a8dbabee566" filterRange="Within">
       <mapping>
@@ -18,7 +18,7 @@
           <account name="Workforce" safety="Workforce"/>
           <outcome metric="Quantity" safety="LostDays" name="LostDays"/>
           <outcome metric="Quantity" safety="Workers" name="InjuredWorkers"/>
-          <outcome metric="Quantity" value="0" name="DeadWorkers"/>
+          <outcome metric="Quantity" value="0" name="DeceasedWorkers"/>
           <outcome metric="Quantity" value="0" name="OtherWorkers"/>
         </mapping>
       </condition>
@@ -29,7 +29,7 @@
           <account name="Workforce" safety="Workforce"/>
           <outcome metric="Quantity" safety="LostDays" name="LostDays"/>
           <outcome metric="Quantity" safety="Workers" name="InjuredWorkers"/>
-          <outcome metric="Quantity" value="0" name="DeadWorkers"/>
+          <outcome metric="Quantity" value="0" name="DeceasedWorkers"/>
           <outcome metric="Quantity" value="0" name="OtherWorkers"/>
         </mapping>
       </condition>
@@ -39,7 +39,7 @@
           <account name="Project" metadata="054279e175c643a7a3a75162b4fc5554"/>
           <account name="Workforce" safety="Workforce"/>
           <outcome metric="Quantity" safety="LostDays" name="LostDays"/>
-          <outcome metric="Quantity" safety="Workers" name="DeadWorkers"/>
+          <outcome metric="Quantity" safety="Workers" name="DeceasedWorkers"/>
           <outcome metric="Quantity" value="0" name="InjuredWorkers"/>
           <outcome metric="Quantity" value="0" name="OtherWorkers"/>
         </mapping>
@@ -52,16 +52,16 @@
           <outcome metric="Quantity" safety="LostDays" name="LostDays"/>
           <outcome metric="Quantity" safety="Workers" name="OtherWorkers"/>
           <outcome metric="Quantity" value="0" name="InjuredWorkers"/>
-          <outcome metric="Quantity" value="0" name="DeadWorkers"/>
+          <outcome metric="Quantity" value="0" name="DeceasedWorkers"/>
         </mapping>
       </condition>
     </condition>
   </condition>
   <mapping>
     <expression>
-      <outcome metric="Amount" expression="(DeadWorkers + InjuredWorkers + OtherWorkers) / Hours * 1000000" name="TRFR"/>
-      <outcome metric="Amount" expression="(DeadWorkers + InjuredWorkers) / Hours * 1000000" name="LTIFR"/>
-      <outcome metric="Amount" expression="DeadWorkers / Hours * 1000000" name="FFR"/>
+      <outcome metric="Amount" expression="(DeceasedWorkers + InjuredWorkers + OtherWorkers) / Hours * 1000000" name="TRFR"/>
+      <outcome metric="Amount" expression="(DeceasedWorkers + InjuredWorkers) / Hours * 1000000" name="LTIFR"/>
+      <outcome metric="Amount" expression="DeceasedWorkers / Hours * 1000000" name="FFR"/>
       <outcome metric="Amount" expression="LostDays / Hours * 1000" name="LDR"/>
     </expression>
   </mapping>

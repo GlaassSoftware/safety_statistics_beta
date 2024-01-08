@@ -1,4 +1,4 @@
-<report xmlns="http://schema.glaass.net/report/1.0">
+<report xmlns="http://schema.glaass.net/report/1.0" reportCode="PROD">
     <condition feature="Production">
         <condition metadata="5c855d64cc944bff99961a8dbabee566" filterRange="Within">
             <mapping>
