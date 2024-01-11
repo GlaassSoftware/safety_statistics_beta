@@ -1,4 +1,4 @@
-﻿<report xmlns="http://schema.glaass.net/report/1.0" reportCode="SAFETY">
+﻿<report xmlns="http://schema.glaass.net/report/1.0" reportCode="Safety">
   <condition feature="Safety">
     <condition metadata="6543d35955f045ffb3f1fdf888ed5cd6" filterRange="Within">
       <condition metadata="212bdeb31ae946f4b254bb41e10b2702" filterValue="6841ca32-f256-444b-8bd5-04c84c0b3b5f">
