@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schema.glaass.net/report/1.0" xmlns:tns="http://schema.glaass.net/report/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TypeIdentifier">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1000" />
+      <xs:pattern value=".*[^\s].*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeAccount">
+    <xs:restriction base="tns:TypeIdentifier" />
+  </xs:simpleType>
+  <xs:simpleType name="TypeCase">
+    <xs:restriction base="tns:TypeIdentifier" />
+  </xs:simpleType>
+  <xs:simpleType name="TypeFeature">
+    <xs:annotation>
+      <xs:documentation>Feature.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:documentation>No feaature.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Production">
+        <xs:annotation>
+          <xs:documentation>Production.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Safety">
+        <xs:annotation>
+          <xs:documentation>Safety.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeField">
+    <xs:restriction base="tns:TypeIdentifier" />
+  </xs:simpleType>
+  <xs:simpleType name="TypeFilter">
+    <xs:annotation>
+      <xs:documentation>Case filter.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Within">
+        <xs:annotation>
+          <xs:documentation>Date Within.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Before">
+        <xs:annotation>
+          <xs:documentation>Date Before.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="After">
+        <xs:annotation>
+          <xs:documentation>Date After.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WithinAndBefore">
+        <xs:annotation>
+          <xs:documentation>Date Within and before.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WithinAndAfter">
+        <xs:annotation>
+          <xs:documentation>Date Within and after.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="First">
+        <xs:annotation>
+          <xs:documentation>First Revision.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Last">
+        <xs:annotation>
+          <xs:documentation>Last Revision.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:documentation>Cases with revisions only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeLayout">
+    <xs:annotation>
+      <xs:documentation>Layout.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Columns">
+        <xs:annotation>
+          <xs:documentation>Columns.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Rows">
+        <xs:annotation>
+          <xs:documentation>Rows.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeMetric">
+    <xs:annotation>
+      <xs:documentation>Metric.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Amount">
+        <xs:annotation>
+          <xs:documentation>Amount.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Quantity">
+        <xs:annotation>
+          <xs:documentation>Quantity.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeProduction">
+    <xs:annotation>
+      <xs:documentation>Production values type.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:documentation>No value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Hours">
+        <xs:annotation>
+          <xs:documentation>Hours.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Workforce">
+        <xs:annotation>
+          <xs:documentation>Workforce.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Workers">
+        <xs:annotation>
+          <xs:documentation>Workers.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeSafety">
+    <xs:annotation>
+      <xs:documentation>Safety values type.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:documentation>No value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LostDays">
+        <xs:annotation>
+          <xs:documentation>LostDays.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Workforce">
+        <xs:annotation>
+          <xs:documentation>Workforce.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Workers">
+        <xs:annotation>
+          <xs:documentation>InvolvedWorkers.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeItem">
+    <xs:restriction base="tns:TypeIdentifier" />
+  </xs:simpleType>
+  <xs:simpleType name="TypeValue">
+    <xs:restriction base="tns:TypeIdentifier" />
+  </xs:simpleType>
+  <xs:complexType name="TypeAccountElement">
+    <xs:annotation>
+      <xs:documentation>Account element.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="name" type="tns:TypeIdentifier" use="required">
+      <xs:annotation>
+        <xs:documentation>Name.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="metadata" type="tns:TypeField" use="optional">
+      <xs:annotation>
+        <xs:documentation>Metadata.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="field" type="tns:TypeField" use="optional">
+      <xs:annotation>
+        <xs:documentation>Field.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="safety" type="tns:TypeSafety" use="optional" default="None">
+      <xs:annotation>
+        <xs:documentation>Safety.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="production" type="tns:TypeProduction" use="optional" default="None">
+      <xs:annotation>
+        <xs:documentation>Production.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TypeOutcome">
+    <xs:annotation>
+      <xs:documentation>Outcome.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="metric" type="tns:TypeMetric" use="required">
+      <xs:annotation>
+        <xs:documentation>Metric.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="field" type="tns:TypeField" use="optional">
+      <xs:annotation>
+        <xs:documentation>Field.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="metadata" type="tns:TypeField" use="optional">
+      <xs:annotation>
+        <xs:documentation>Metadata.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="value" type="xs:double" use="optional">
+      <xs:annotation>
+        <xs:documentation>Value.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="safety" type="tns:TypeSafety" use="optional" default="None">
+      <xs:annotation>
+        <xs:documentation>Safety.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="production" type="tns:TypeProduction" use="optional" default="None">
+      <xs:annotation>
+        <xs:documentation>Production.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="name" type="tns:TypeIdentifier" use="optional">
+      <xs:annotation>
+        <xs:documentation>Name for safety report outcome.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TypeMapping">
+    <xs:annotation>
+      <xs:documentation>Mapping.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="account" type="tns:TypeAccountElement" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Optional accounts.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="outcome" type="tns:TypeOutcome" nillable="false" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Outcome.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="account" type="tns:TypeAccount" use="optional">
+      <xs:annotation>
+        <xs:documentation>Single Account, if multiple inner mappings not used.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="item" type="tns:TypeItem" use="optional">
+      <xs:annotation>
+        <xs:documentation>Item.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="hidden" type="xs:boolean" use="optional" default="false">
+      <xs:annotation>
+        <xs:documentation>Hidden mapping.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TypeReportMapping">
+    <xs:annotation>
+      <xs:documentation>Mapping of expression under report.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="expression" type="tns:TypeReportMappingExpression" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Expression.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="item" type="tns:TypeItem" use="optional">
+      <xs:annotation>
+        <xs:documentation>Item.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TypeReportMappingExpression">
+    <xs:annotation>
+      <xs:documentation>Mapping of expression under report.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="outcome" type="tns:TypeExpressionOutcome" nillable="false" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Outcome.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypeExpressionAccountElement">
+    <xs:annotation>
+      <xs:documentation>Account element.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="name" type="tns:TypeIdentifier" use="required">
+      <xs:annotation>
+        <xs:documentation>Name.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TypeExpressionOutcome">
+    <xs:annotation>
+      <xs:documentation>Outcome.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="metric" type="tns:TypeMetric" use="required">
+      <xs:annotation>
+        <xs:documentation>Metric.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="expression" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Metric.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="name" type="tns:TypeIdentifier" use="required">
+      <xs:annotation>
+        <xs:documentation>Name.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TypeCondition">
+    <xs:annotation>
+      <xs:documentation>Condition.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="condition" type="tns:TypeCondition" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Condition.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="mapping" type="tns:TypeMapping" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Mapping.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="case" type="tns:TypeCase" use="optional">
+      <xs:annotation>
+        <xs:documentation>Case.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="feature" type="tns:TypeFeature" use="optional" default="None">
+      <xs:annotation>
+        <xs:documentation>Feature.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="field" type="tns:TypeField" use="optional">
+      <xs:annotation>
+        <xs:documentation>Field.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="metadata" type="tns:TypeField" use="optional">
+      <xs:annotation>
+        <xs:documentation>Metadata.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="filterRange" type="tns:TypeFilter" use="optional">
+      <xs:annotation>
+        <xs:documentation>Filter range.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="filterValue" type="tns:TypeValue" use="optional">
+      <xs:annotation>
+        <xs:documentation>Filter value.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="fieldValue" type="tns:TypeValue" use="optional">
+      <xs:annotation>
+        <xs:documentation>Field value.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="safety" type="tns:TypeSafety" use="optional" default="None">
+      <xs:annotation>
+        <xs:documentation>Safety.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TypeReport">
+    <xs:sequence>
+      <xs:element name="condition" type="tns:TypeCondition" nillable="false" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="mapping" type="tns:TypeReportMapping" nillable="false" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="fileNamePrefix" type="tns:TypeIdentifier" use="optional">
+      <xs:annotation>
+        <xs:documentation>File name prefix.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="layout" type="tns:TypeLayout" use="optional" default="Rows">
+      <xs:annotation>
+        <xs:documentation>Layout. Default value is Rows.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="reportCode" type="tns:TypeIdentifier" use="optional">
+      <xs:annotation>
+        <xs:documentation>Report code.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="report" type="tns:TypeReport">
+    <xs:annotation>
+      <xs:documentation>Root report element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
